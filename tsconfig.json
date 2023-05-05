@@ -18,6 +18,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/hooks/useThemeSwitcher.js",
+    "src/components/NavBar.jsx"
+  ],
   "exclude": ["node_modules"]
 }
