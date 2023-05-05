@@ -9,12 +9,26 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
+  mode: 'jit',
   theme: {
     extend: {
+   
+      
+
       fontFamily: {
         mont: ["var(--font-mont)"],
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
       colors: {
+        onNeutralBg: 'var(--onNeutralBg)',
+        neutralBg: 'var(--neutralBg)',
+        onPrimaryBg: 'var(--onPrimaryBg)',
+        primaryBg: 'var(--primaryBg)',
+        primary2: 'var(--primary)',
         dark: "#1b1b1b",
         light: "#f5f5f5",
         primary: "#B63E96", // 240,86,199
@@ -22,7 +36,19 @@ module.exports = {
       },
       animation: {
         "spin-slow": "spin 10s linear infinite",
+        fade: 'fadeOut 1.7s  ease-in-out ',
+        wiggle: 'wiggle 1s ease-in-out infinite',
       },
+      keyframes: theme => ( {
+      
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+      },
+      fadeOut: {
+        '100%': { opacity: '100%'},
+        '0%': { opacity: '0%'},
+      },}),
     },
     backgroundImage: {
       circularLight:
@@ -50,5 +76,5 @@ module.exports = {
       // => @media (max-width: 479px) { ... }
     },
   },
-  plugins: [],
+  plugins: [require('@headlessui/tailwindcss')],
 };

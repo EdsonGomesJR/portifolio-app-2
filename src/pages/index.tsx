@@ -3,6 +3,7 @@ import { HireMe } from "@/components/HireMe";
 import { LinkArrow } from "@/components/Icons";
 import { Layout } from "@/components/Layout";
 import { NavBar } from "@/components/NavBar";
+import { Themes } from "@/components/Themes";
 import TransitionEffect from "@/components/TransitionEffect";
 import Image from "next/image";
 import Link from "next/link";
@@ -60,6 +61,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
+            <Themes/>
           </div>
         </Layout>
         <HireMe />
